@@ -1,0 +1,37 @@
+id: 50562
+name: ai-generate-server
+environments:
+  development:
+    timeout: 600
+    cli-timeout: 600
+    memory: 512
+    cli-memory: 256
+    runtime: docker
+    dockerfile: vapor.Dockerfile
+    queues:
+      - ai-generate-server-image-generate-development: 3
+      - ai-generate-server-stock-image-generate-development: 3
+    build:
+      - 'COMPOSER_MIRROR_PATH_REPOS=1 composer install --no-dev --optimize-autoloader'
+      - 'php artisan event:cache'
+      - 'php artisan route:cache'
+      - 'php artisan config:cache'
+    deploy:
+      - 'php artisan migrate --force'
+  production:
+    timeout: 600
+    cli-timeout: 600
+    memory: 512
+    cli-memory: 256
+    runtime: docker
+    dockerfile: vapor.Dockerfile
+    queues:
+      - ai-generate-server-image-generate-production: 10
+      - ai-generate-server-stock-image-generate-production: 12
+    build:
+      - 'COMPOSER_MIRROR_PATH_REPOS=1 composer install --no-dev --optimize-autoloader'
+      - 'php artisan event:cache'
+      - 'php artisan route:cache'
+      - 'php artisan config:cache'
+    deploy:
+      - 'php artisan migrate --force'

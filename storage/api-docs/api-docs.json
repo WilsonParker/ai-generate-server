@@ -1,0 +1,677 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Example for response examples value",
+        "version": "1.0"
+    },
+    "paths": {
+        "api/generate/img/queue": {
+            "post": {
+                "tags": [
+                    "image",
+                    "generate"
+                ],
+                "summary": "image generate",
+                "description": "img generate 요청을 받습니다.",
+                "operationId": "f07cf84af7035e57bfb8f1d339e903bb",
+                "parameters": [
+                    {
+                        "name": "type",
+                        "in": "query",
+                        "description": "generate type",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "generate": {
+                                "summary": "generate",
+                                "value": "generate"
+                            },
+                            "stock": {
+                                "summary": "stock",
+                                "value": "stock"
+                            }
+                        }
+                    },
+                    {
+                        "name": "callback_url",
+                        "in": "query",
+                        "description": "call url after generate completed",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "http://localhost/callback": {
+                                "summary": "http://localhost/callback",
+                                "value": "http://localhost/callback"
+                            }
+                        }
+                    },
+                    {
+                        "name": "payload",
+                        "in": "query",
+                        "description": "payload",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "payload": {
+                                "summary": "payload",
+                                "value": "payload"
+                            }
+                        }
+                    },
+                    {
+                        "name": "size",
+                        "in": "query",
+                        "description": "image generate count",
+                        "required": false,
+                        "schema": {
+                            "type": "int"
+                        },
+                        "examples": {
+                            "1": {
+                                "summary": "1",
+                                "value": "1"
+                            }
+                        }
+                    },
+                    {
+                        "name": "image",
+                        "in": "query",
+                        "description": "image url",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "http://exmaple.png": {
+                                "summary": "http://exmaple.png",
+                                "value": "http://exmaple.png"
+                            }
+                        }
+                    },
+                    {
+                        "name": "people",
+                        "in": "query",
+                        "description": "people count",
+                        "required": true,
+                        "schema": {
+                            "type": "int"
+                        },
+                        "examples": {
+                            "1": {
+                                "summary": "1",
+                                "value": "1"
+                            }
+                        }
+                    },
+                    {
+                        "name": "gender",
+                        "in": "query",
+                        "description": "gender",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "man": {
+                                "summary": "man",
+                                "value": "man"
+                            }
+                        }
+                    },
+                    {
+                        "name": "race",
+                        "in": "query",
+                        "description": "race",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "caucasian": {
+                                "summary": "caucasian",
+                                "value": "caucasian"
+                            }
+                        }
+                    },
+                    {
+                        "name": "width",
+                        "in": "query",
+                        "description": "width",
+                        "required": false,
+                        "schema": {
+                            "type": "int"
+                        },
+                        "examples": {
+                            "1024": {
+                                "summary": "1024",
+                                "value": "1024"
+                            }
+                        }
+                    },
+                    {
+                        "name": "height",
+                        "in": "query",
+                        "description": "height",
+                        "required": false,
+                        "schema": {
+                            "type": "int"
+                        },
+                        "examples": {
+                            "1024": {
+                                "summary": "1024",
+                                "value": "1024"
+                            }
+                        }
+                    },
+                    {
+                        "name": "sampler",
+                        "in": "query",
+                        "description": "sampler",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "DPM++ 2M SDE Karras": {
+                                "summary": "DPM++ 2M SDE Karras",
+                                "value": "DPM++ 2M SDE Karras"
+                            }
+                        }
+                    },
+                    {
+                        "name": "steps",
+                        "in": "query",
+                        "description": "steps",
+                        "required": false,
+                        "schema": {
+                            "type": "int"
+                        },
+                        "examples": {
+                            "30": {
+                                "summary": "30",
+                                "value": "30"
+                            }
+                        }
+                    },
+                    {
+                        "name": "seed",
+                        "in": "query",
+                        "description": "seed",
+                        "required": false,
+                        "schema": {
+                            "type": "int"
+                        },
+                        "examples": {
+                            "-1": {
+                                "summary": "-1",
+                                "value": "-1"
+                            }
+                        }
+                    },
+                    {
+                        "name": "image_cfg_scale",
+                        "in": "query",
+                        "description": "image_cfg_scale",
+                        "required": false,
+                        "schema": {
+                            "type": "int"
+                        },
+                        "examples": {
+                            "7": {
+                                "summary": "7",
+                                "value": "7"
+                            }
+                        }
+                    },
+                    {
+                        "name": "denoising_strength",
+                        "in": "query",
+                        "description": "denoising_strength",
+                        "required": false,
+                        "schema": {
+                            "type": "int"
+                        },
+                        "examples": {
+                            "0.75": {
+                                "summary": "0.75",
+                                "value": "0.75"
+                            }
+                        }
+                    },
+                    {
+                        "name": "lora",
+                        "in": "query",
+                        "description": "lora",
+                        "required": false,
+                        "schema": {
+                            "type": "int"
+                        },
+                        "examples": {
+                            "1": {
+                                "summary": "1",
+                                "value": "1"
+                            }
+                        }
+                    },
+                    {
+                        "name": "aged",
+                        "in": "query",
+                        "description": "aged",
+                        "required": false,
+                        "schema": {
+                            "type": "int"
+                        },
+                        "examples": {
+                            "100": {
+                                "summary": "100",
+                                "value": "100"
+                            }
+                        }
+                    },
+                    {
+                        "name": "friendly",
+                        "in": "query",
+                        "description": "friendly",
+                        "required": false,
+                        "schema": {
+                            "type": "int"
+                        },
+                        "examples": {
+                            "100": {
+                                "summary": "100",
+                                "value": "100"
+                            }
+                        }
+                    },
+                    {
+                        "name": "alwayson_scripts",
+                        "in": "query",
+                        "description": "alwayson_scripts",
+                        "required": false
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "api/generate/img2img/queue": {
+            "post": {
+                "tags": [
+                    "image",
+                    "generate"
+                ],
+                "summary": "image generate",
+                "description": "image2image generate 요청을 받습니다.",
+                "operationId": "5f8c0baa06dd0df21b20a039db203810",
+                "parameters": [
+                    {
+                        "name": "type",
+                        "in": "query",
+                        "description": "generate type",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "generate": {
+                                "summary": "generate",
+                                "value": "generate"
+                            },
+                            "stock": {
+                                "summary": "stock",
+                                "value": "stock"
+                            }
+                        }
+                    },
+                    {
+                        "name": "callback_url",
+                        "in": "query",
+                        "description": "call url after generate completed",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "http://localhost/callback": {
+                                "summary": "http://localhost/callback",
+                                "value": "http://localhost/callback"
+                            }
+                        }
+                    },
+                    {
+                        "name": "payload",
+                        "in": "query",
+                        "description": "payload",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "payload": {
+                                "summary": "payload",
+                                "value": "payload"
+                            }
+                        }
+                    },
+                    {
+                        "name": "size",
+                        "in": "query",
+                        "description": "image generate count",
+                        "required": false,
+                        "schema": {
+                            "type": "int"
+                        },
+                        "examples": {
+                            "1": {
+                                "summary": "1",
+                                "value": "1"
+                            }
+                        }
+                    },
+                    {
+                        "name": "image",
+                        "in": "query",
+                        "description": "image url",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "http://exmaple.png": {
+                                "summary": "http://exmaple.png",
+                                "value": "http://exmaple.png"
+                            }
+                        }
+                    },
+                    {
+                        "name": "width",
+                        "in": "query",
+                        "description": "width",
+                        "required": false,
+                        "schema": {
+                            "type": "int"
+                        },
+                        "examples": {
+                            "1024": {
+                                "summary": "1024",
+                                "value": "1024"
+                            }
+                        }
+                    },
+                    {
+                        "name": "height",
+                        "in": "query",
+                        "description": "height",
+                        "required": false,
+                        "schema": {
+                            "type": "int"
+                        },
+                        "examples": {
+                            "1024": {
+                                "summary": "1024",
+                                "value": "1024"
+                            }
+                        }
+                    },
+                    {
+                        "name": "sampler",
+                        "in": "query",
+                        "description": "sampler",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "DPM++ 2M SDE Karras": {
+                                "summary": "DPM++ 2M SDE Karras",
+                                "value": "DPM++ 2M SDE Karras"
+                            }
+                        }
+                    },
+                    {
+                        "name": "steps",
+                        "in": "query",
+                        "description": "steps",
+                        "required": false,
+                        "schema": {
+                            "type": "int"
+                        },
+                        "examples": {
+                            "30": {
+                                "summary": "30",
+                                "value": "30"
+                            }
+                        }
+                    },
+                    {
+                        "name": "seed",
+                        "in": "query",
+                        "description": "seed",
+                        "required": false,
+                        "schema": {
+                            "type": "int"
+                        },
+                        "examples": {
+                            "-1": {
+                                "summary": "-1",
+                                "value": "-1"
+                            }
+                        }
+                    },
+                    {
+                        "name": "image_cfg_scale",
+                        "in": "query",
+                        "description": "image_cfg_scale",
+                        "required": false,
+                        "schema": {
+                            "type": "int"
+                        },
+                        "examples": {
+                            "7": {
+                                "summary": "7",
+                                "value": "7"
+                            }
+                        }
+                    },
+                    {
+                        "name": "denoising_strength",
+                        "in": "query",
+                        "description": "denoising_strength",
+                        "required": false,
+                        "schema": {
+                            "type": "int"
+                        },
+                        "examples": {
+                            "0.75": {
+                                "summary": "0.75",
+                                "value": "0.75"
+                            }
+                        }
+                    },
+                    {
+                        "name": "alwayson_scripts",
+                        "in": "query",
+                        "description": "alwayson_scripts",
+                        "required": false
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "api/generate/text2image/queue": {
+            "post": {
+                "tags": [
+                    "text",
+                    "generate"
+                ],
+                "summary": "text generate",
+                "description": "text2image generate 요청을 받습니다.",
+                "operationId": "115cb74988432db4ca203da642304479",
+                "parameters": [
+                    {
+                        "name": "callback_url",
+                        "in": "query",
+                        "description": "call url after generate completed",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "http://localhost/callback": {
+                                "summary": "http://localhost/callback",
+                                "value": "http://localhost/callback"
+                            }
+                        }
+                    },
+                    {
+                        "name": "payload",
+                        "in": "query",
+                        "description": "payload",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "payload": {
+                                "summary": "payload",
+                                "value": "payload"
+                            }
+                        }
+                    },
+                    {
+                        "name": "prompt",
+                        "in": "query",
+                        "description": "prompt",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "negative",
+                        "in": "query",
+                        "description": "negative",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "width",
+                        "in": "query",
+                        "description": "width",
+                        "required": false,
+                        "schema": {
+                            "type": "int"
+                        },
+                        "examples": {
+                            "1024": {
+                                "summary": "1024",
+                                "value": "1024"
+                            }
+                        }
+                    },
+                    {
+                        "name": "height",
+                        "in": "query",
+                        "description": "height",
+                        "required": false,
+                        "schema": {
+                            "type": "int"
+                        },
+                        "examples": {
+                            "1024": {
+                                "summary": "1024",
+                                "value": "1024"
+                            }
+                        }
+                    },
+                    {
+                        "name": "sampler",
+                        "in": "query",
+                        "description": "sampler",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "DPM++ 2M SDE Karras": {
+                                "summary": "DPM++ 2M SDE Karras",
+                                "value": "DPM++ 2M SDE Karras"
+                            }
+                        }
+                    },
+                    {
+                        "name": "steps",
+                        "in": "query",
+                        "description": "steps",
+                        "required": false,
+                        "schema": {
+                            "type": "int"
+                        },
+                        "examples": {
+                            "30": {
+                                "summary": "30",
+                                "value": "30"
+                            }
+                        }
+                    },
+                    {
+                        "name": "seed",
+                        "in": "query",
+                        "description": "seed",
+                        "required": false,
+                        "schema": {
+                            "type": "int"
+                        },
+                        "examples": {
+                            "-1": {
+                                "summary": "-1",
+                                "value": "-1"
+                            }
+                        }
+                    },
+                    {
+                        "name": "denoising_strength",
+                        "in": "query",
+                        "description": "denoising_strength",
+                        "required": false,
+                        "schema": {
+                            "type": "int"
+                        },
+                        "examples": {
+                            "0.75": {
+                                "summary": "0.75",
+                                "value": "0.75"
+                            }
+                        }
+                    },
+                    {
+                        "name": "alwayson_scripts",
+                        "in": "query",
+                        "description": "alwayson_scripts",
+                        "required": false
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        }
+    }
+}
